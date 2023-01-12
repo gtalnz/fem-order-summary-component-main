@@ -1,0 +1,133 @@
+@import './reset.css';
+
+:root {
+	/* Breakpoint */
+	--desktop: 1440px;
+
+	/* Colors */
+	/* Primary */
+	--pale-blue: hsl(225, 100%, 94%);
+	--bright-blue: hsl(245, 75%, 52%);
+	/* Neutral */
+	--very-pale-blue: hsl(225, 100%, 98%);
+	--desaturated-blue: hsl(224, 23%, 55%);
+	--dark-blue: hsl(223, 47%, 23%);
+
+	/* Typography */
+	/* Body copy */
+	--font-size: 16px;
+	/* Font */
+	--font-family: 'Red Hat Display', sans-serif;
+	--fw-normal: 500;
+	--fw-bold: 700;
+	--fw-black: 900;
+
+	--border-radius: 1rem;
+
+	--bs-color: hsl(225, 90%, 85%);
+	--box-shadow: 0 1px 1px var(--bs-color), 0 2px 2px var(--bs-color),
+		0 4px 4px var(--bs-color), 0 8px 8px var(--bs-color),
+		0 16px 16px var(--bs-color);
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: stretch;
+	background-image: url('/images/pattern-background-mobile.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-color: var(--pale-blue);
+	font: var(--fw-normal) var(--font-size) var(--font-family);
+	color: var(--dark-blue);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto 0;
+}
+
+.summary-card {
+	max-width: 450px;
+	border-radius: var(--border-radius);
+	background-color: white;
+	box-shadow: var(--box-shadow);
+	margin: 2em;
+}
+
+.summary-card > img {
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.summary-card button {
+	padding: 1em;
+	border: none;
+	cursor: pointer;
+	border-radius: calc(var(--border-radius) * 0.62);
+}
+
+.summary-card button:hover {
+	box-shadow: var(--box-shadow);
+}
+
+.summary-card button#proceed {
+	--bs-color: hsl(245, 75%, 40%);
+	background-color: var(--bright-blue);
+	color: white;
+	box-shadow: var(--box-shadow);
+}
+
+.summary-card button#cancel {
+	background-color: unset;
+}
+.summary-card button#cancel:hover {
+	--bs-color: hsl(225, 100%, 90%);
+	background-color: var(--very-pale-blue);
+}
+
+.card-content {
+	margin: 2em;
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+	align-items: stretch;
+	text-align: center;
+}
+.card-content p {
+	color: var(--desaturated-blue);
+}
+
+.card-content .plan {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1em;
+	background-color: var(--very-pale-blue);
+	padding: 1em;
+	border-radius: calc(var(--border-radius) * 0.62);
+}
+
+.card-content .plan .details {
+	text-align: left;
+	margin-right: auto;
+}
+
+.card-content .plan .details .price {
+	color: var(--desaturated-blue);
+}
+
+h1 {
+	font-weight: var(--fw-black);
+}
+
+.attribution {
+	margin-bottom: 1em;
+}
+
+@media screen and (min-width: 1440px) {
+	body {
+		background-image: url('/images/pattern-background-desktop.svg');
+	}
+}
